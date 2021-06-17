@@ -1,10 +1,14 @@
 import React from 'react';
 import "./CartItems.css";
+import CartItem from "./CartItem";
 
 function CartItems() {
     return (
-        <div className="Cart-item">
+        <div className="CartItems">
           <h1>Shopping Cart</h1>
+          <div className="CartItems-item">
+            <CartItem />
+          </div>
         </div>
     )
 }
