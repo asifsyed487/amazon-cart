@@ -11,12 +11,18 @@ function CartItem() {
                     <h2>Apple IPad Pro</h2>
                 </div>
                 <div className="info-stock">
-
+                    In Stock
                 </div>
                 <div className="item-actions">
                     <div className="item-quantity">
-
+                    <select>
+                        <option value="1">QTY:1</option>
+                        <option value="2">QTY:2</option>
+                        <option value="3">QTY:3</option>
+                        <option value="4">QTY:4</option>
+                    </select>
                     </div>
+                    <div className="item-divider"> | </div>
                     <div className="item-delete">
                         Delete
                     </div>
