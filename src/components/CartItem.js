@@ -1,21 +1,22 @@
 import React from 'react';
 import "./CartItem.css";
-function CartItem() {
+function CartItem(props) {
+    console.log(props.image);
     return (
         <div className="CartItem">
             <div className="CartItem-image">
-                <img src="https://www.gizmochina.com/wp-content/uploads/2018/10/Apple-iPad-Pro-11-2018-600x576.jpg" alt="" />
+                <img src={process.env.PUBLIC_URL + "/items/" + props.image} alt="" />
             </div>
             <div className="CartItem-info">
                 <div className="info-title">
-                    <h2>Apple IPad Pro</h2>
+                    <h2>{props.title}</h2>
                 </div>
                 <div className="info-stock">
-                    In Stock
+                    {props.stock}
                 </div>
                 <div className="item-actions">
                     <div className="item-quantity">
-                    <select>
+                    <select value={props.quantity}>
                         <option value="1">QTY:1</option>
                         <option value="2">QTY:2</option>
                         <option value="3">QTY:3</option>
@@ -29,7 +30,7 @@ function CartItem() {
                 </div>
             </div>
             <div className="CartItem-price">
-                $769.00
+                ${props.price}
             </div>
         </div>
     )
