@@ -1,7 +1,6 @@
 import React from 'react';
 import "./CartItem.css";
 function CartItem(props) {
-    console.log(props.image);
     return (
         <div className="CartItem">
             <div className="CartItem-image">
@@ -16,7 +15,7 @@ function CartItem(props) {
                 </div>
                 <div className="item-actions">
                     <div className="item-quantity">
-                    <select value={props.quantity}>
+                    <select onChange={(e) => props.changeItemQuantity(e, props.index)} value={props.quantity}>
                         <option value="1">QTY:1</option>
                         <option value="2">QTY:2</option>
                         <option value="3">QTY:3</option>
@@ -24,7 +23,9 @@ function CartItem(props) {
                     </select>
                     </div>
                     <div className="item-divider"> | </div>
-                    <div className="item-delete">
+                    <div className="item-delete" onClick={() => {
+                        props.deleteItem(props.index);
+                    }}>
                         Delete
                     </div>
                 </div>

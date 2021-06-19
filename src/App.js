@@ -16,6 +16,7 @@ function App() {
 
         <CartItems
           items={cartItems}
+          ChangeCartQuantity={setCartItems}
          />
         <CartTotal
           items={cartItems}
